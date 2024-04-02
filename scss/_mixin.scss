@@ -1,0 +1,24 @@
+@mixin flex-display($display, $justify-content, $align-items){
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+// ! media queries
+
+@mixin media ($screensize) {
+  @if ($screensize == larger){
+    @media(max-width: 1250px) {@content};
+   }
+  @if ($screensize == large){
+    @media(max-width: 992px) {@content};
+   }
+
+   @if ($screensize == medium) {
+     @media(max-width: 768px) {@content};
+   }
+
+   @if ($screensize == small){
+    @media (max-width: 576px) {@content};
+   }
+}

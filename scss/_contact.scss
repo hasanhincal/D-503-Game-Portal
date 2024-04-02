@@ -1,0 +1,122 @@
+.contact{
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.5)0%,rgba(0,0,0,.9)100%),
+    url(../img/contact.jpg);
+    background-size: cover ;
+    min-height: 100vh;
+    &_container{
+        &_content{
+            display: flex;
+            margin-top: 4rem;
+            align-items: center;
+            
+            @include media(large){
+                flex-direction: column; 
+            }
+           
+            
+            
+            &_detail{
+                background-color: rgba($primaryColor, .8);
+                flex: -1;
+                color: $lightColor;
+                min-height: 40rem;
+                margin-right: -5rem;
+                z-index: 2;
+                @include flex-display(flex,center,center);
+                flex-direction: column;
+                padding: 4rem;
+
+                @include media(large){
+                    width: 90%; 
+                    margin-right: 0;
+                    min-height: 30rem;  
+                }
+                
+                h3{
+                    color: $lightColor;
+                    margin-bottom: 3rem;
+                }
+               
+                ul{
+                    padding: 1rem;
+
+                    li{
+                       display: flex;
+                       align-items: center;
+                       margin-bottom: 2rem;
+                        a{
+                            transition: $transition;                        }
+                        a:hover{
+                           color: rgba($secondaryColor, .5);
+                        }
+
+                        p{
+                            font-size: 1.8rem;
+                            margin-left: 2rem;
+                            letter-spacing: .1rem;
+                        }
+                    }
+                }
+            }
+            
+            &_form{
+                background-color: rgba($secondaryColor, .8);
+                flex: 2;
+                min-height: 50rem;
+                display: flex;
+                align-items: center;
+                @include media(large){
+                    width: 90%;   
+                }
+                
+                form{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                   
+                    
+                    
+                    input,textarea{
+                      width: 60%;
+                      padding: 1rem;
+                      border: none;
+                      resize: none;
+                      color: $lightColor;
+                      font-size: 1.4rem;
+                      font-family: inherit;
+                      display: block;
+                      letter-spacing: .2rem;
+                    }
+
+                    input:focus, textarea:focus{
+                        outline: none;
+                        border-bottom: 1px solid $lightColor;
+                    }
+
+                    :not(:last-child){ 
+                        margin-bottom: 3rem;
+                        background-color: transparent;
+                        border-bottom: 1px solid rgba($primaryColor, .8);
+                    }
+
+                    input[type=submit]{
+                        background-color: $lightColor;
+                        color: $primaryColor;
+                        cursor: pointer;
+                        font-family: $primaryFont;
+                        font-weight:bold;
+                        font-size: large;
+                        transition: $transition;
+                        &:hover{
+                            background-color: $primaryColor;
+                            color: $lightColor;
+                        }
+                    }
+                   
+                }
+               
+            }
+        }
+    }
+}

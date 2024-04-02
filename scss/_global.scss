@@ -1,0 +1,80 @@
+//! google fonts
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@500&family=Open+Sans:wght@300&display=swap");
+
+//! general settings
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  outline: none;
+  scroll-behavior: smooth;
+  background-color: $lightColor;
+  font-family: $secondaryFont;
+  color: $grayColor;
+}
+main {
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $primaryFont;
+  color: $primaryColor;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 5rem;
+  color: $lightColor;
+
+  @include media(large) {
+    font-size: 3.6rem;
+  }
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+h4 {
+  font-size: 2rem;
+  color: $lightColor;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $primaryFont;
+  color: $lightColor;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+section {
+  padding: 8rem 0;
+
+  @include media(medium){
+    padding: 4rem 0;
+  }
+  @include media(small){
+    padding: 2rem 0;
+  }
+}

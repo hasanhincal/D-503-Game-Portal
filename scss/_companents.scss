@@ -1,0 +1,202 @@
+// ! utilities
+
+.btn {
+  background-color: $primaryColor;
+  color: $lightColor;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: $transition;
+
+  @include media(medium){
+    padding: .5rem 1rem;
+  }
+
+  &:hover {
+    background-color: $lightColor;
+    color: $primaryColor;
+  }
+
+  &-primary {
+    background-color: $lightColor;
+    color: $primaryColor;
+    transition: $transition;
+
+    &:hover {
+      background-color: $primaryColor;
+      color: $lightColor;
+    }
+  }
+}
+
+.container {
+  max-width: 114rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text-primary {
+  color: $primaryColor;
+}
+
+.text-light {
+  color: $lightColor;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg {
+  &-dark {
+    background-color: $secondaryColor;
+  }
+  &-light {
+    background-color: $lightColor;
+  }
+}
+
+.ml {
+  &-2 {
+    margin-left: 2rem;
+  }
+}
+
+//latest badges
+.badge {
+  border: none;
+  padding: 0.2rem 2.4rem;
+  font-size: 1.6rem;
+  color: $lightColor;
+  background-color: $primaryColor;
+  border-radius: 4px;
+  margin: 5rem;
+  letter-spacing: 0.3rem;
+  &-tech {
+    background-color: $commentColor;
+  }
+  &-game {
+    background-color: $dataColor;
+  }
+}
+
+// recent raiting
+
+.raiting {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: $lightColor;
+  color: $primaryColor;
+  z-index: 100;
+  opacity: 0;
+  line-height: 3rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: $primaryFont;
+  border-radius: 50%;
+  margin: 1rem;
+  transition: $transition;
+}
+
+.date {
+  color: $dataColor;
+  transition: $transition;
+
+  &:hover {
+    color: darken($dataColor, 25%);
+  }
+}
+
+.title {
+  color: $primaryColor;
+  transition: $transition;
+
+  &:hover {
+    color: darken($primaryColor, 25%);
+  }
+}
+
+// reviews section
+
+.review {
+  padding: 0.2rem 5rem;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-left: 10rem;
+  border-left: 1px solid $primaryColor;
+  border-bottom: 1px solid $primaryColor;
+  transform: skew(-25deg);
+
+  @include media(large){
+    transform: skew(0deg);
+    border: none;
+    margin-left: 0;
+    line-height: 1.4;
+  }
+  @include media(small){
+    line-height: 1.2;
+  }
+
+  & > * {
+    transform: skew(28deg);
+
+    @include media(large){
+      transform: skew(0deg);
+    }
+  }
+
+  &-tags {
+    font-size: 1.5rem;
+    color: $lightColor;
+    letter-spacing: 0.3rem;
+  }
+
+  &-text {
+    margin: 1rem 0;
+  }
+
+  &-user {
+    display: flex;
+    align-items: center;
+
+    @include media(small){
+      flex-direction: column;
+  }
+
+    img {
+      width: 7.5rem;
+      margin: .5rem 1.5rem;
+      border-radius: 50%;
+    }
+
+    &-detail {
+      font-family: $primaryFont;
+      margin-left: 1rem;
+    }
+
+    &-platform {
+      margin-left: .5rem;
+      :not(:last-child) {
+        color: $primaryColor;
+      }
+
+      .fab {
+        margin: .5rem .5rem;
+      }
+    }
+
+    &-rating {
+      margin-left: 2rem;
+      @include media(small){
+        margin-left: 0;
+    }
+      .checked {
+        color: $primaryColor;
+      }
+    }
+  }
+}

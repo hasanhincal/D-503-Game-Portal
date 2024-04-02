@@ -1,0 +1,57 @@
+footer {
+  background-color: $secondaryColor;
+  color: $lightColor;
+
+  .container {
+    @include flex-display(flex, space-between, center);
+    padding: 2rem;
+    flex-wrap: wrap;
+
+    .footer-section {
+      position: relative;
+      text-align: center;
+
+      h4 {
+        font-size: 1.4rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+       
+      }
+      
+      h4::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        width: 0;
+        height: 28%;
+        border-bottom: 2px solid $primaryColor;
+        transition: $transition;
+        overflow: hidden;
+       
+      }
+      h4:hover::before {
+        width: 100%;
+        transform: translate(-50%);
+      }
+      ul {
+        margin-left: 0.5rem;
+        letter-spacing: 0.1rem;
+        line-height: 2rem;
+        li a {
+          transition: $transition;
+          &:hover {
+            color: darken($primaryColor, 5%);
+          }
+        }
+      }
+    }
+    
+  }
+  .footer-bottom {
+    text-align: center;
+    padding: 2rem;
+    letter-spacing: .15rem;
+  }
+}

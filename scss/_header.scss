@@ -1,0 +1,207 @@
+.mainHeader {
+  // topHeader
+  .topHeader {
+    border-bottom: 1px solid $primaryColor;
+    &_container {
+      @include flex-display(flex, space-between, center);
+
+      @include media(small) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      &_logo-title {
+        font-size: 7rem;
+        @include media(larger) {
+          margin-left: 1.5rem
+        }
+        @include media(large) {
+          font-size: 5rem;
+        }
+      }
+      &_list {
+        @include flex-display(flex, space-between, center);
+
+        @include media(small){
+          order: 4;
+        }
+        &_item {
+          margin: 0 1rem;
+          padding: 1rem;
+
+          @include media(large) {
+            margin: 0 0.5rem;
+            padding: 0.5rem;
+          }
+          &-link {
+            font-size: 2rem;
+            transition: 0.5s ease-in-out;
+          }
+          &:hover a {
+            color: $primaryColor;
+            font-size: 2.5rem;
+          }
+        }
+      }
+      &_login {
+        @include media(larger) {
+          margin-right: 1.5rem
+        }
+        &-icon {
+          display: inline-block;
+          
+          @include media(medium) {
+            display: none;
+          }
+        }
+
+        i {
+          display: none;
+         
+          @include media(medium) {
+            display: inline-block;
+            
+          }
+        }
+      }
+    }
+  }
+
+  // navHeader
+  .navHeader {
+    @include media(large) {
+      position: fixed;
+      background-color: rgba($secondaryColor, 0.7);
+      top: 0;
+      width: 50%;
+      right: -50%;
+      z-index: 10;
+      height: 100vh;
+      transition: $transition;
+
+      &.active {
+        right: 0;
+      }
+    }
+    &_container {
+      &_navbar {
+        @include flex-display(flex, space-between, center); 
+        
+        @include media(large) {
+          flex-direction: column;
+        }
+
+        &_list {
+          display: flex;
+
+          @include media(large) {
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+          }
+          &_item {
+            line-height: 8rem;
+            font-size: 1.5rem;
+            transition: $transition;
+
+            position: relative;
+
+            &-dropdown {
+              position: absolute;
+              width: 150%;
+              left: 50%;
+              top: 12rem;
+              transition: $transition;
+              opacity: 0;
+              z-index: 10;
+              visibility: hidden;
+              background-color: lighten($secondaryColor, 10%);
+
+              li {
+                line-height: 4rem;
+                padding: 0 0.5rem;
+                transition: $transition;
+
+                &:hover {
+                  background-color: $primaryColor;
+                }
+              }
+            }
+            &:hover {
+              background-color: $primaryColor;
+
+              & .dropdown {
+                opacity: 1;
+                visibility: visible;
+                top: 8rem;
+              }
+            }
+
+            &-link {
+              padding: 0 2rem;
+              font-size: 1.6rem;
+              letter-spacing: 2px;
+            }
+          }
+        }
+
+        &_search {
+          @include media(large) {
+            align-self: flex-start;
+            margin-left: 2rem;
+          }
+          input[type],
+          button[type] {
+            border: none;
+            background-color: transparent;
+            color: $lightColor;
+          }
+          input[type] {
+            border-bottom: 1px solid red;
+            padding: 0.5rem;
+          }
+
+          button[type] {
+            margin-left: -5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// responsive header
+.open-menu,
+.close-menu {
+  font-size: 3rem;
+  color: $lightColor;
+  cursor: pointer;
+  display: none;
+  transition: $transition;
+
+  @include media(large) {
+    display: block;
+  }
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+.open-menu {
+  margin-right: 2rem;
+}
+
+.close-menu {
+  @include media(large) {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.3rem;
+  }
+}
+
+#check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}

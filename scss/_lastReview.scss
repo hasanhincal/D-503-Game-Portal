@@ -1,0 +1,38 @@
+.lastReviewed{
+    height: 70vh;
+    @include flex-display(flex,space-between,center);
+    padding: 0;
+    background-color: $secondaryColor;
+
+    &_detail{
+        flex-basis: 40%;
+
+        @include media(large){
+            flex-basis: 75%;
+        }
+        @include media(medium){
+            flex-basis: 100%;
+        }
+    }
+
+    &_image{
+        flex-basis: 60%;
+        background-image: linear-gradient(to right bottom, rgba($primaryColor, 1), rgba($primaryColor, .1)), url(".././img/game_3.jpg");
+        background-size: cover;
+        height: 100%;
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+
+        @include media(large){
+            flex-basis: 25%;
+            clip-path: none;
+            background-position: center center;
+        }
+        @include media(medium){
+            flex-basis: 0%;
+        }
+        @include media(small){
+            text-align: center;
+        }
+        
+    }
+}

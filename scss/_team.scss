@@ -1,0 +1,116 @@
+.team-section{
+  @include media(medium){
+    padding: 4rem 0;
+}
+@include media(small){
+    padding: 2rem 0;
+}
+}
+
+.team {
+    display: flex;
+    
+    &_member {
+      width: 100%;
+      height: 100%;
+  
+      &:first-child {
+        margin-right: 4rem;
+
+        @include media(large){
+          margin-right: 3rem;
+        }
+        @include media(medium){
+          margin-right: 2rem;
+        }
+        @include media(small){
+          margin-right: 1rem;
+        }
+      }
+      &:last-child {
+        margin-left: 4rem;
+        @include media(large){
+          margin-left: 3rem;
+        }
+        @include media(medium){
+          margin-left: 2rem;
+        }
+        @include media(small){
+          margin-left: 1rem;
+        }
+      }
+  
+      &_card {
+        height: 40rem;
+        perspective: 1000px;
+        @include media(large){
+          height: 33rem;
+        }
+        @include media(medium){
+          height: 30rem;
+        }
+        @include media(small){
+          height: 23rem;
+        }
+        &_inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transform: preserve-3d;
+  
+          &_front,
+          &_back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: all 1s ease-in-out;
+          }
+  
+          &_front {
+            background-color: $primaryColor;
+          }
+  
+          &_back {
+            background-color: $secondaryColor;
+            transform: rotateY(180deg); 
+            display: table;
+               
+            &_content{
+                 display: table-cell;
+                 vertical-align: middle;
+  
+                 p{
+                  font-size: 1.8rem;
+                  font-weight: 600;
+                 }
+  
+                 a{
+                  display: inline-block;
+                  cursor: pointer;
+                  margin: 1rem;
+                   
+                  i{
+                    transition: $transition;
+                   }
+                  
+                   i:hover{
+                    color: $primaryColor;
+                  }
+                  
+                 }
+            } 
+        }
+        &:hover &_front {
+          transform: rotateY(180deg);
+        }
+        &:hover &_back {
+          transform: none;
+        }
+      }
+    }
+   }
+}
